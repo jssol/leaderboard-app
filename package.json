@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.",
   "private": true,
-	"scripts": {
-		"test": "jest",
-		"deploy": "gh-pages -d dist/",
-		"start": "webpack serve --open",
-		"build": "webpack --mode production",
-		"dev": "webpack --mode development"
-	},
+  "scripts": {
+    "test": "jest",
+    "deploy": "gh-pages -d dist/",
+    "start": "webpack serve --open",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jssol/leaderboard-api.git"
@@ -33,6 +33,7 @@
     "gh-pages": "^3.2.3",
     "hint": "^6.1.9",
     "jest": "^27.5.1",
+    "mini-css-extract-plugin": "^2.5.3",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
