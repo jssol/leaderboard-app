@@ -1,3 +1,65 @@
-body {
-  background-color: #232323;
+/* Custom variables */
+$ff: cursive, sans-serif;
+$fs-title: 3em;
+$fw-title: 600;
+$fs-subtitle: 1.6em;
+$fw-subtitle: 500;
+$fs-text: 1em;
+$fw-text: 400;
+
+/* Define mixins */
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/* Css reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Proper styling */
+.app-wrapper {
+  width: 100vw;
+  height: 100vh;
+  font-family: $ff;
+  @include flex(column, start, center);
+
+  .header {
+    width: 80%;
+    top: 0;
+    position: relative;
+    @include flex(row, start, center);
+
+    .app-title {
+      font-size: $fs-title;
+      font-weight: $fw-title;
+      margin-top: 0.5em;
+      @include flex(column, center, center);
+    }
+  }
+
+  .main {
+    width: 60%;
+    margin-top: 2.5em;
+    @include flex(row, space-between, flex-start);
+
+    .board-display {
+      width: 48%;
+    }
+
+    .board-control {
+      width: 45%;
+    }
+  }
 }
