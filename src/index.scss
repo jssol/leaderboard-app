@@ -1,10 +1,10 @@
 /* Custom variables */
 $ff: cursive, sans-serif;
-$fs-title: 3em;
+$fs-title: 2.75em;
 $fw-title: 600;
-$fs-subtitle: 1.6em;
+$fs-subtitle: 1.85em;
 $fw-subtitle: 500;
-$fs-text: 1em;
+$fs-text: 1.25em;
 $fw-text: 400;
 
 /* Define mixins */
@@ -28,38 +28,108 @@ html {
   scroll-behavior: smooth;
 }
 
+.subtitle {
+  font-size: $fs-subtitle;
+  font-weight: $fw-title;
+}
+
+.btn {
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 0 #000;
+  background-color: transparent;
+  font-family: $ff;
+  padding: 0.25em 0.5em;
+  font-weight: $fw-title;
+}
+
+.input-field {
+  height: 3em;
+  width: 100%;
+  padding: 0.5em;
+  font-family: $ff;
+  border: 3px solid #000;
+}
+
+.input-field::placeholder {
+  color: #000;
+}
+
 /* Proper styling */
 .app-wrapper {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   font-family: $ff;
+
   @include flex(column, start, center);
 
   .header {
     width: 80%;
     top: 0;
     position: relative;
+
     @include flex(row, start, center);
 
     .app-title {
       font-size: $fs-title;
       font-weight: $fw-title;
       margin-top: 0.5em;
+
       @include flex(column, center, center);
     }
   }
 
   .main {
-    width: 60%;
-    margin-top: 2.5em;
+    width: 75%;
+    margin-top: 1.5em;
+
     @include flex(row, space-between, flex-start);
 
     .board-display {
-      width: 48%;
+      width: 50%;
+
+      .board-header {
+        width: 100%;
+
+        @include flex(row, space-between, center);
+      }
+
+      .board-scores {
+        list-style: none;
+        border: 3px solid #000;
+        margin-top: 1em;
+
+        .score-item {
+          padding: 0.5em;
+          height: 2em;
+
+          @include flex(row, start, center);
+
+          &:nth-of-type(2n) {
+            background-color: #d1d1d1;
+          }
+        }
+      }
     }
 
     .board-control {
-      width: 45%;
+      width: 40%;
+
+      .score-form {
+        width: 100%;
+        margin-top: 1em;
+
+        @include flex(column, start, stretch);
+
+        .score {
+          margin-top: 1em;
+        }
+
+        .score-submit-btn {
+          align-self: flex-end;
+          margin-top: 1.5em;
+        }
+      }
     }
   }
 }
