@@ -1,56 +1,55 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Leaderboard App
 
-> Description the project.
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
+> The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
+
+## Screenshot
+
+![app-screenshot](./screenshot.png)
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML, Javascript
+- Sass, Babel, PostCss
+- WebPack5, CLI, gh-pages, gitflow
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://jssol.github.io/leaderboard-app/)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+A working browser, preferrably Chrome or Firefox
+
 ### Setup
+
+`git clone `
 
 ### Install
 
+`npm install`
+
 ### Usage
+
+`npm start`
 
 ### Run tests
 
-### Deployment
-
-
+`npm test`
 
 ## Authors
 
-👤 **Author1**
+👤 **Jonathan Sivahera**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@jssol](https://github.com/jssol)
+- Twitter: [@jsivahera](https://twitter.com/jsivahera)
+- LinkedIn: [@jsivahera](https://linkedin.com/in/jsivahera)
 
 ## 🤝 Contributing
 
