@@ -6,7 +6,7 @@ export default class {
 
   getScores = async () => {
     const { result } = await fetch(this.url)
-    .then((response) => response.json());
+      .then((response) => response.json());
 
     return result;
   }

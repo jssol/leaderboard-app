@@ -13,7 +13,7 @@ const sudoku = new Game('Sudoku');
 document.addEventListener('DOMContentLoaded', () => {
   const scores = sudoku.getScores();
   renderScores(scoreBoard, scores);
-})
+});
 
 refreshBtn.onclick = () => {
   const scores = sudoku.getScores();
@@ -23,7 +23,7 @@ refreshBtn.onclick = () => {
 scoreForm.onsubmit = (e) => {
   e.preventDefault();
   if (nameInput.value && scoreInput.value) {
-    sudoku.addScore({user: nameInput.value, score: scoreInput.value});
+    sudoku.addScore({ user: nameInput.value, score: scoreInput.value });
     scoreForm.reset();
   }
-}
+};
