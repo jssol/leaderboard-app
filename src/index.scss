@@ -15,6 +15,49 @@ $fw-text: 400;
   align-items: $align;
 }
 
+@mixin theme($text-clr, $bg-color, $bg-color-shade) {
+  .btn {
+    border: 2px solid $text-clr;
+    box-shadow: 2px 2px 0 0 $text-clr;
+    color: $text-clr;
+  }
+  
+  .input-field {
+    border: 3px solid $text-clr;
+    background-color: $bg-color;
+  }
+  
+  .input-field::placeholder {
+    color: $text-clr;
+  }
+  
+  /* Proper styling */
+  .app-wrapper {
+    background-color: $bg-color;
+    color: $text-clr;
+  
+    .main {
+      .board-scores {
+        border: 3px solid $text-clr;
+
+        &::-webkit-scrollbar-track {
+          background-color: $bg-color;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $text-clr;
+          width: 8px;
+          border-radius: 8px;
+        }
+
+        .score-item:nth-of-type(2n) {
+          background-color: $bg-color-shade;
+        }
+      }
+    }
+  }
+}
+
 /* Css reset */
 *,
 *::after,
@@ -26,113 +69,121 @@ $fw-text: 400;
 
 html {
   scroll-behavior: smooth;
-}
 
-.subtitle {
-  font-size: $fs-subtitle;
-  font-weight: $fw-title;
-}
+  &.dark {
+    $text-clr: #ddd;
+    $bg-color: #333;
+    $bg-color-shade: #222;
 
-.btn {
-  border: 2px solid #000;
-  box-shadow: 2px 2px 0 0 #000;
-  background-color: transparent;
-  font-family: $ff;
-  padding: 0.25em 0.5em;
-  font-weight: $fw-title;
-}
-
-.input-field {
-  height: 3em;
-  width: 100%;
-  padding: 0.5em;
-  font-family: $ff;
-  border: 3px solid #000;
-}
-
-.input-field::placeholder {
-  color: #000;
-}
-
-/* Proper styling */
-.app-wrapper {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  font-family: $ff;
-
-  @include flex(column, start, center);
-
-  .header {
-    width: 80%;
-    top: 0;
-    position: relative;
-
-    @include flex(row, start, center);
-
-    .app-title {
-      font-size: $fs-title;
-      font-weight: $fw-title;
-      margin-top: 0.5em;
-
-      @include flex(column, center, center);
-    }
+    @include theme($text-clr, $bg-color, $bg-color-shade);
   }
 
-  .main {
-    width: 75%;
-    margin-top: 1.5em;
+  &.light {
+    $text-clr: #232323;
+    $bg-color: #eee;
+    $bg-color-shade: #d5d5d5;
+  
+    @include theme($text-clr, $bg-color, $bg-color-shade);
+  }
 
-    @include flex(row, space-between, flex-start);
-
-    .board-display {
-      width: 50%;
-
-      .board-header {
-        width: 100%;
-
-        @include flex(row, space-between, center);
+  .subtitle {
+    font-size: $fs-subtitle;
+    font-weight: $fw-title;
+  }
+  
+  .btn {
+    background-color: transparent;
+    font-family: $ff;
+    padding: 0.25em 0.5em;
+    font-weight: $fw-title;
+  }
+  
+  .input-field {
+    height: 4em;
+    width: 100%;
+    padding: 0.5em;
+    font-family: $ff;
+  }
+  
+  /* Proper styling */
+  .app-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: $ff;
+  
+    @include flex(column, start, center);
+  
+    .header {
+      width: 80%;
+      top: 0;
+      position: relative;
+  
+      @include flex(row, start, center);
+  
+      .app-title {
+        font-size: $fs-title;
+        font-weight: $fw-title;
+        margin-top: 0.5em;
+  
+        @include flex(column, center, center);
       }
+    }
+  
+    .main {
+      width: 75%;
+      margin-top: 1.5em;
+  
+      @include flex(row, space-between, flex-start);
+  
+      .board-display {
+        width: 50%;
+  
+        .board-header {
+          width: 100%;
+  
+          @include flex(row, space-between, center);
+        }
+  
+        .board-scores {
+          list-style: none;
+          margin-top: 1em;
+          min-height: 50vh;
+          max-height: 60vh;
+          overflow-y: auto;
 
-      .board-scores {
-        list-style: none;
-        border: 3px solid #000;
-        margin-top: 1em;
-        min-height: 50vh;
-        max-height: 60vh;
-        overflow-y: auto;
-
-        .score-item {
-          padding: 0.5em;
-          height: 2em;
-
-          @include flex(row, start, center);
-
-          &:nth-of-type(2n) {
-            background-color: #d1d1d1;
+          &::-webkit-scrollbar {
+            width: 10px;
+          }
+  
+          .score-item {
+            padding: 0.5em;
+            height: 2em;
+  
+            @include flex(row, start, center);
+          }
+        }
+      }
+  
+      .board-control {
+        width: 40%;
+  
+        .score-form {
+          width: 100%;
+          margin-top: 1em;
+  
+          @include flex(column, start, stretch);
+  
+          .score {
+            margin-top: 1em;
+          }
+  
+          .score-submit-btn {
+            align-self: flex-end;
+            margin-top: 1.5em;
           }
         }
       }
     }
-
-    .board-control {
-      width: 40%;
-
-      .score-form {
-        width: 100%;
-        margin-top: 1em;
-
-        @include flex(column, start, stretch);
-
-        .score {
-          margin-top: 1em;
-        }
-
-        .score-submit-btn {
-          align-self: flex-end;
-          margin-top: 1.5em;
-        }
-      }
-    }
-  }
+  }  
 }
