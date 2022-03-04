@@ -21,7 +21,7 @@ $fw-text: 400;
     box-shadow: 2px 2px 0 0 $text-clr;
     color: $text-clr;
   }
-  
+
   .input-field {
     border: 3px solid $text-clr;
     border-style: none none solid none;
@@ -29,18 +29,18 @@ $fw-text: 400;
 
     &:focus {
       outline: none;
-    }  
+    }
   }
 
   .input-field::placeholder {
     color: $text-clr;
   }
-  
+
   /* Proper styling */
   .app-wrapper {
     background-color: $bg-color;
     color: $text-clr;
-  
+
     .main {
       .dark-toggle {
         color: $text-clr;
@@ -91,7 +91,7 @@ html {
     $text-clr: #232323;
     $bg-color: #eee;
     $bg-color-shade: #d5d5d5;
-  
+
     @include theme($text-clr, $bg-color, $bg-color-shade);
   }
 
@@ -99,69 +99,70 @@ html {
     font-size: $fs-subtitle;
     font-weight: $fw-title;
   }
-  
+
   .btn {
     background-color: transparent;
     font-family: $ff;
     padding: 0.25em 0.5em;
     font-weight: $fw-title;
   }
-  
+
   .input-field {
     height: 4em;
     width: 100%;
     padding: 0.5em;
     font-family: $ff;
   }
-  
+
   /* Proper styling */
   .app-wrapper {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
     font-family: $ff;
-  
+
     @include flex(column, start, center);
-  
+
     .header {
       width: 90%;
       top: 0;
       position: relative;
       align-self: center;
       margin-top: 1em;
-  
+
       @include flex(row, space-between, center);
-  
+
       .app-title {
         font-size: $fs-title;
         font-weight: $fw-title;
-  
+
         @include flex(column, center, center);
       }
 
       .dark-toggle {
         width: 3em;
         height: 3em;
+
         @include flex(column, center, center);
       }
     }
-  
+
     .main {
       width: 85%;
       margin-top: 2em;
-  
+
       @include flex(column-reverse, start, center);
-  
+
       .board-display {
         width: 100%;
         margin-bottom: 1.5em;
-  
+
         .board-header {
           width: 100%;
-  
+
           @include flex(row, space-between, center);
         }
-  
+
         .board-scores {
           list-style: none;
           margin-top: 1em;
@@ -172,30 +173,30 @@ html {
           &::-webkit-scrollbar {
             width: 10px;
           }
-  
+
           .score-item {
             padding: 0.5em;
             height: 3em;
-  
+
             @include flex(row, start, center);
           }
         }
       }
-  
+
       .board-control {
         width: 100%;
         margin-bottom: 1.5em;
-  
+
         .score-form {
           width: 100%;
           margin-top: 1em;
-  
+
           @include flex(column, start, stretch);
-  
+
           .score {
             margin-top: 1em;
           }
-  
+
           .score-submit-btn {
             align-self: flex-end;
             margin-top: 1.5em;
@@ -203,7 +204,7 @@ html {
         }
       }
     }
-  }  
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -218,72 +219,72 @@ html {
       height: 100vh;
       overflow: hidden;
       font-family: $ff;
-    
+
       @include flex(column, start, center);
-    
+
       .header {
         width: 80%;
         top: 0;
         position: relative;
-    
+
         @include flex(row, space-between, center);
-    
+
         .app-title {
           font-size: $fs-title;
           font-weight: $fw-title;
-    
+
           @include flex(column, center, center);
         }
       }
-    
+
       .main {
         width: 75%;
         margin-top: 1.5em;
-    
+
         @include flex(row, space-between, flex-start);
-    
+
         .board-display {
           width: 50%;
-    
+
           .board-header {
             width: 100%;
-    
+
             @include flex(row, space-between, center);
           }
-    
+
           .board-scores {
             list-style: none;
             margin-top: 1em;
             min-height: 50vh;
             max-height: 60vh;
             overflow-y: auto;
-  
+
             &::-webkit-scrollbar {
               width: 10px;
             }
-    
+
             .score-item {
               padding: 0.5em;
               height: 2em;
-    
+
               @include flex(row, start, center);
             }
           }
         }
-    
+
         .board-control {
           width: 40%;
-    
+
           .score-form {
             width: 100%;
             margin-top: 1em;
-    
+
             @include flex(column, start, stretch);
-    
+
             .score {
               margin-top: 1em;
             }
-    
+
             .score-submit-btn {
               align-self: flex-end;
               margin-top: 1.5em;
@@ -291,6 +292,6 @@ html {
           }
         }
       }
-    }  
-  }  
+    }
+  }
 }
